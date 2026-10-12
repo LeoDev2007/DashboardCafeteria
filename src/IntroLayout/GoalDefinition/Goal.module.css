@@ -1,0 +1,87 @@
+/* Welcome Component */
+
+.WelcomeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.WelcomeContainer > h2 {
+  font-size: 2rem;
+  color: #2e5697;
+  font-weight: bold;
+}
+
+.WelcomeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.WelcomeInfo h2 {
+  font-size: 1.5rem;
+}
+
+.WelcomeInfo span {
+  color: #2e5697;
+  font-weight: bold;
+}
+
+.WelcomeInfo p {
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Form Goal Component */
+
+.FormGoalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.FormGoalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.FormGoalInfo h2 {
+  color: #2e5697;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.FormGoal_Form {
+  width: 30vw;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+  gap: 10px;
+}
+
+.FormGoal_Form input {
+  border: none;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+.FormGoal_Form button{
+    width: 100%;
+    max-width: 100px;
+}
+
+.link p{
+    color: #2E5697;
+}
+
+.link a{
+    text-decoration: underline;
+}

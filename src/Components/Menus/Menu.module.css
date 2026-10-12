@@ -1,0 +1,16 @@
+.menuContainer{
+    background-color: #2E5697;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.menuContainer .link{
+    font-size: 1.4rem;
+    font-weight: lighter;
+}
+
+.menuContainer .active{
+    text-decoration: underline;
+}

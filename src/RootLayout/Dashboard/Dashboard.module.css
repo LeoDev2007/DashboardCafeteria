@@ -1,0 +1,96 @@
+.dashboardContainer {
+  padding: 1.6rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.miniContainer_1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.faturamento_cardFluxo {
+  display: flex;
+  width: 100%;
+  gap: 5rem;
+}
+
+.faturamento {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faturamento h2 {
+  font-size: 1.4rem;
+}
+
+.faturamento h1 {
+  font-size: 2.5rem;
+}
+
+.faturamento p {
+  color: #2e5697;
+}
+
+/* Card */
+
+.card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+}
+
+.fluxo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statics {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.miniContainer_2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemContainer .item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+

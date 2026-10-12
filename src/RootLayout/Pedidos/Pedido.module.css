@@ -1,0 +1,138 @@
+.pedidosContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1.6rem 3rem;
+}
+
+.pedidosMiniContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pedidosMiniContainer h2{
+    font-size: 2rem;
+}
+
+.pedidosMiniContainer > div{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.pedidosMiniContainer > div > :last-child{
+    width: 200px;
+}
+
+.pedidosLista{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+/* Card pedido */
+
+.pedidoCard{
+    display: flex;
+    background-color: #fff;
+    padding: 1rem;
+    align-items: center;
+    border-radius: 10px;
+    gap: 2rem;
+    width: 70%;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.pedidoCardInfo{
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.pedidoCardInfo h2{
+    font-size: 2rem;
+}
+
+.pedidoCardInfo label{
+    color: #2e5697;
+}
+
+.pedidoCardInfo > :last-child{
+    width: 300px;
+}
+
+.pedidoCardAcoes{
+    display: flex;
+    gap: 20px;
+}
+
+
+
+.statusPendente, .statusConcluido, .statusCancelado {
+  display: inline-flex; 
+  align-items: center;   
+  justify-content: center; 
+  height: 38px;          
+  padding: 0 12px;       
+  border-radius: 6px;
+}
+
+/* Mantenha apenas as cores abaixo delas de forma limpa */
+.statusPendente { color: #d97706; background-color: #fef3c7; }
+.statusConcluido { color: #16a34a; background-color: #dcfce7; }
+.statusCancelado { color: #dc2626; background-color: #fee2e2; }
+
+/* Editar pedido */
+
+.formularioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+}
+
+.labelTitulo {
+  color: #2E5697;
+  font-weight: bold;
+}
+
+.produtosLista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.produtoLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.produtoInfo {
+  flex: 1;
+}
+
+.produtoPreco {
+  margin-left: 8px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.incrementadorContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantidadeNumero {
+  min-width: 20px;
+  text-align: center;
+}
+
+.botaoSalvar {
+  margin-top: 16px;
+}

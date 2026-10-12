@@ -1,0 +1,148 @@
+.estoque{
+    padding: 1.6rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.miniContainer_1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.miniContainer_1 .title{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.miniContainer_1 .title button{
+    border-radius: 10px;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.miniContainer_1 .select{
+    display: flex;
+    align-items: center;
+    gap: 2rem;;
+}
+
+.miniContainer_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.miniContainer_2 .searchEstoque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.miniContainer_2 .estoqueAcoes{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* ProdutoLista */
+
+.produtoLista{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* ProdutoItem */
+
+.produtoItem{
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.produtoItem h3, p{
+    font-size: 1.4rem;
+}
+
+.produtoItem .produtoAcoes{
+    display: flex;
+    gap: 1rem;
+}
+
+/* Produto Form */
+
+.formularioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.labelTitulo {
+  color: #2E5697;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.linhaDupla {
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.incrementadorContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #E2E8F0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  height: 40px;
+}
+
+.quantidadeNumero {
+  min-width: 24px;
+  text-align: center;
+}
+
+.linhaIngrediente {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.inputQtdIngrediente {
+  width: 80px;
+}
+
+.botaoAdicionar {
+  margin-top: 12px;
+  width: fit-content;
+}
+
+.containerBotaoSalvar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.botaoSalvar {
+  width: 140px;
+  border-radius: 20px;
+}

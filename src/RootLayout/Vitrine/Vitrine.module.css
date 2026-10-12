@@ -1,0 +1,142 @@
+.vitrine{
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 3rem;
+}
+
+.vitrine h2{
+    font-size: 2rem;
+}
+
+
+.vitrine .vitrineContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vitrine .vitrineSearch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vitrineMiniContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+
+.vitrineMiniContainer > :last-child {
+    width: 200px; 
+}
+
+.vitrineGrid{
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.vitrineAcoes{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Card Produto */
+
+.cardVitrine{
+    background-color: #fff;
+    margin-top: 10px;
+    width: 240px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.cardVitrine .imageCard{
+    background-color: black;
+    width: 100%;
+    height: 140px;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.cardVitrine .titleCheckBox{
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.cardVitrine .titleCheckBox h2{
+    font-size: 1rem;
+}
+
+.cardVitrine .info{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+/* Form Pedido */
+
+.formularioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+}
+
+.labelTitulo {
+  color: #2E5697;
+  font-weight: bold;
+}
+
+.produtosLista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.produtoLinha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.produtoInfo {
+  flex: 1;
+}
+
+.produtoPreco {
+  margin-left: 8px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.incrementadorContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantidadeNumero {
+  min-width: 20px;
+  text-align: center;
+}
+
+.botaoSalvar {
+  margin-top: 16px;
+}

@@ -1,0 +1,54 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.welcome{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.welcome h2{
+    color: #2E5697;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.welcome p{
+    max-width: 60%;
+    text-align: center;
+}
+
+.form{
+    width: 50vw;
+    padding: 1.2rem 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+    gap: 10px;
+}
+
+.form input{
+    border: none;
+     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.form button{
+    width: 100%;
+    max-width: 400px;
+}
+
+.link p{
+    color: #2E5697;
+}
+
+.link a{
+    text-decoration: underline;
+}
