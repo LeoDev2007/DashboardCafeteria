@@ -1,5 +1,5 @@
 import z from "zod";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@chakra-ui/react";
 import { Field } from "@chakra-ui/react";
@@ -9,6 +9,7 @@ import { useNavigate } from "react-router";
 import styles from "./Auth.module.css";
 import { NavLink } from "react-router";
 import { ROUTES } from "../../routes/routes";
+import MultipleSelect from "@/Components/MultipleSelect"; 
 
 const registerSchema = z
   .object({
@@ -17,6 +18,12 @@ const registerSchema = z
       .min(3, { message: "O nome deve ter no mínimo 3 caracteres" })
       .regex(/^[A-Za-zÀ-ÿ\s]+$/, { message: "Apenas letras permitidas" }),
     email: z.string().email({ message: "Insira um E-mail Válido" }),
+    
+    // ✅ Alterado para validar as formas de pagamento selecionadas
+    formasPagamento: z
+      .array(z.string())
+      .min(1, { message: "Selecione pelo menos 1 forma de pagamento" }),
+
     password: z
       .string()
       .min(7, { message: "A senha deve ter no mínimo 7 caracteres" })
@@ -37,26 +44,40 @@ const registerSchema = z
 
 type CreateUserData = z.infer<typeof registerSchema>;
 
+
+const OPCOES_PAGAMENTO_MOCK = [
+  { label: "Pix", value: "pix" },
+  { label: "Dinheiro", value: "dinheiro" },
+  { label: "Cartão de Crédito", value: "credito" },
+  { label: "Cartão de Débito", value: "debito" }
+];
+
 const Register = () => {
   const {
     register,
     handleSubmit,
+    control, 
     formState: { errors },
   } = useForm<CreateUserData>({
     resolver: zodResolver(registerSchema),
+    defaultValues: {
+      formasPagamento: [] 
+    }
   });
 
   const navigate = useNavigate();
 
-  const onSubmit = (/*data: CreateUserData*/) => {
+  const onSubmit = (data: CreateUserData) => {
     try {
       alert("Usuário criado");
+      console.log("Dados salvos:", data);
       navigate("/goal_definition");
     } catch (error) {
       console.error("Erro na criação do usuário");
       return;
     }
   };
+
   return (
     <div className={styles.mainContainer}>
       <div className={styles.welcome}>
@@ -80,6 +101,7 @@ const Register = () => {
           />
           <Field.ErrorText>{errors.name?.message}</Field.ErrorText>
         </Field.Root>
+        
         <Field.Root invalid={!!errors.email}>
           <Field.Label>E-mail:</Field.Label>
           <Input
@@ -90,6 +112,24 @@ const Register = () => {
           />
           <Field.ErrorText>{errors.email?.message}</Field.ErrorText>
         </Field.Root>
+
+        <Field.Root invalid={!!errors.formasPagamento}>
+          <Controller
+            name="formasPagamento"
+            control={control}
+            render={({ field }) => (
+              <MultipleSelect
+                label="Formas de Pagamento Aceitas:"
+                placeholder="Escolha as formas de pagamento..."
+                items={OPCOES_PAGAMENTO_MOCK}
+                value={field.value}
+                onChange={field.onChange} 
+              />
+            )}
+          />
+          <Field.ErrorText>{errors.formasPagamento?.message}</Field.ErrorText>
+        </Field.Root>
+
         <Field.Root invalid={!!errors.password}>
           <Field.Label>Senha:</Field.Label>
           <PasswordInput
@@ -100,6 +140,7 @@ const Register = () => {
           />
           <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
         </Field.Root>
+        
         <Field.Root invalid={!!errors.confirmpassword}>
           <Field.Label>Confirmar Senha:</Field.Label>
           <PasswordInput
@@ -110,6 +151,7 @@ const Register = () => {
           />
           <Field.ErrorText>{errors.confirmpassword?.message}</Field.ErrorText>
         </Field.Root>
+        
         <Button
           variant="surface"
           bg="#2E5697"
