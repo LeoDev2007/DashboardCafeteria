@@ -48,7 +48,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data: CreateUserData) => {
+  const onSubmit = (/*data: CreateUserData*/) => {
     try {
       alert("Usuário criado");
       navigate("/goal_definition");

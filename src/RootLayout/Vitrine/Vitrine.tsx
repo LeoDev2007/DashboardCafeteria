@@ -47,9 +47,9 @@ const PRODUTOS_MOCK = [
   },
 ];
 
-type Props = {};
 
-const Vitrine = (props: Props) => {
+
+const Vitrine = () => {
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
   const handleToggleSelect = (id: string) => {

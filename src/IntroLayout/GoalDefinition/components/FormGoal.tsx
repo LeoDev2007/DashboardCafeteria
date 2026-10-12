@@ -29,7 +29,7 @@ const FormGoal = () => {
 
    const navigate = useNavigate();
 
-  const onSubmit = (data: CreateGoalData) => {
+  const onSubmit = (/*data: CreateGoalData*/) => {
     try {
       navigate("/dashboard");
     } catch (error) {

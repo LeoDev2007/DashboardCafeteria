@@ -1,4 +1,3 @@
-import React from "react";
 import { Checkbox } from "@chakra-ui/react";
 import styles from '../Vitrine.module.css'
 

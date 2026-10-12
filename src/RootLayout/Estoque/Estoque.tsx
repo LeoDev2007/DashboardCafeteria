@@ -30,7 +30,7 @@ type Ingrediente = {
 const Estoque = () => {
   const [step, setStep] = useState<number>(1);
 
-  const [produtos, setProdutos] = useState<Produto[]>([
+  const [produtos, /*setProdutos*/] = useState<Produto[]>([
     {
       id: 1,
       nome: "Pão Francês",
@@ -49,7 +49,7 @@ const Estoque = () => {
     },
   ]);
 
-  const [ingredientes, setIngredientes] = useState<Ingrediente[]>([
+  const [ingredientes, /*setIngredientes*/] = useState<Ingrediente[]>([
     {
       id: 1,
       nome: "Farinha",

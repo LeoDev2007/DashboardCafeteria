@@ -35,7 +35,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data: LoginUserData) => {
+  const onSubmit = (/*data: LoginUserData*/) => {
     try {
       alert("Usuário logado");
       navigate("/goal_definition");
