@@ -1,87 +1,348 @@
-/* Welcome Component */
-
-.WelcomeContainer {
+.WelcomeContainer,
+.FormGoalContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 40px 24px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+.WelcomeContainer *,
+.WelcomeContainer *::before,
+.WelcomeContainer *::after,
+.FormGoalContainer *,
+.FormGoalContainer *::before,
+.FormGoalContainer *::after {
+  box-sizing: border-box;
+}
+
+.WelcomeContainer h2,
+.WelcomeContainer p,
+.FormGoalContainer h2,
+.FormGoalContainer p {
+  margin: 0;
+}
+
+.WelcomeContainer {
+  text-align: center;
 }
 
 .WelcomeContainer > h2 {
-  font-size: 2rem;
-  color: #2e5697;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #315a98;
+  letter-spacing: -0.5px;
 }
 
 .WelcomeInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
+  width: 100%;
+  max-width: 680px;
+  padding: 48px 40px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .WelcomeInfo h2 {
-  font-size: 1.5rem;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #0f172a;
 }
 
 .WelcomeInfo span {
-  color: #2e5697;
-  font-weight: bold;
+  color: #315a98;
+  font-weight: 700;
 }
 
 .WelcomeInfo p {
-  max-width: 90%;
+  max-width: 520px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #64748b;
   text-align: center;
 }
 
-/* Form Goal Component */
+.WelcomeContainer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  min-height: 44px;
+  padding: 12px 24px;
+  background-color: #315a98;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.WelcomeContainer button:hover {
+  background-color: #244779;
+  box-shadow: 0 4px 12px rgba(49, 90, 152, 0.18);
+  transform: translateY(-1px);
+}
+
+.WelcomeContainer button:active {
+  transform: translateY(0);
+}
 
 .FormGoalContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  text-align: center;
 }
 
 .FormGoalInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
+  width: 100%;
+  max-width: 720px;
 }
 
 .FormGoalInfo h2 {
-  color: #2e5697;
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin-bottom: 8px;
+  color: #315a98;
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.FormGoalInfo p {
+  max-width: 650px;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
 }
 
 .FormGoal_Form {
-  width: 30vw;
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
-  gap: 10px;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  text-align: left;
+}
+
+.FormGoal_Form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .FormGoal_Form input {
+  width: 100%;
+  min-height: 46px;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: none;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+
+.FormGoal_Form input::placeholder {
+  color: #94a3b8;
+}
+
+.FormGoal_Form input:focus {
+  border-color: #315a98;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 90, 152, 0.12);
+}
+
+.FormGoal_Form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  max-width: 180px;
+  min-height: 44px;
+  padding: 12px 24px;
+  background-color: #315a98;
+  color: #ffffff;
   border: none;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+.FormGoal_Form button:hover {
+  background-color: #244779;
+  box-shadow: 0 4px 12px rgba(49, 90, 152, 0.18);
+  transform: translateY(-1px);
+}
 
-.FormGoal_Form button{
+.FormGoal_Form button:active {
+  transform: translateY(0);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.link p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.link a {
+  color: #315a98;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link a:hover {
+  color: #244779;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .WelcomeContainer,
+  .FormGoalContainer {
+    padding: 32px 20px;
+    gap: 24px;
+  }
+
+  .WelcomeInfo {
+    max-width: 560px;
+    padding: 36px 28px;
+  }
+
+  .WelcomeInfo h2 {
+    font-size: 24px;
+  }
+
+  .WelcomeInfo p,
+  .FormGoalInfo p {
+    font-size: 14px;
+  }
+
+  .FormGoal_Form {
+    max-width: 440px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .WelcomeContainer,
+  .FormGoalContainer {
+    min-height: 100dvh;
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .WelcomeContainer > h2 {
+    font-size: 21px;
+  }
+
+  .WelcomeInfo {
+    padding: 32px 20px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+
+  .WelcomeInfo h2 {
+    font-size: 22px;
+  }
+
+  .WelcomeInfo p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .WelcomeContainer button {
     width: 100%;
-    max-width: 100px;
+    max-width: 240px;
+  }
+
+  .FormGoalInfo {
+    gap: 12px;
+  }
+
+  .FormGoalInfo h2 {
+    font-size: 24px;
+  }
+
+  .FormGoalInfo p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .FormGoal_Form {
+    padding: 24px 20px;
+    gap: 20px;
+    border-radius: 12px;
+  }
+
+  .FormGoal_Form button {
+    max-width: 100%;
+  }
+
+  .link p {
+    font-size: 13px;
+  }
 }
 
-.link p{
-    color: #2E5697;
-}
+@media (max-width: 360px) {
+  .WelcomeInfo {
+    padding: 28px 16px;
+  }
 
-.link a{
-    text-decoration: underline;
+  .WelcomeInfo h2 {
+    font-size: 20px;
+  }
+
+  .FormGoal_Form {
+    padding: 20px 16px;
+  }
 }

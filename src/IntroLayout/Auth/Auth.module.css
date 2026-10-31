@@ -1,55 +1,238 @@
-.mainContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 48px 24px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
-.welcome{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.mainContainer *,
+.mainContainer *::before,
+.mainContainer *::after {
+  box-sizing: border-box;
+}
+
+.mainContainer h2,
+.mainContainer p {
+  margin: 0;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+
+.welcome h2 {
+  color: #315a98;
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+}
+
+.welcome h2 span {
+  color: #315a98;
+}
+
+.welcome p {
+  width: 100%;
+  max-width: 520px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+}
+
+.form label {
+  margin-bottom: 6px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form input {
+  width: 100%;
+  min-height: 44px;
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form input::placeholder {
+  color: #94a3b8;
+}
+
+.form input:focus-visible {
+  border-color: #315a98;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 90, 152, 0.12);
+}
+
+.form > button {
+  align-self: stretch;
+  width: 100%;
+  max-width: none;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 12px 20px;
+  background-color: #315a98;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.form > button:hover {
+  background-color: #244779;
+  box-shadow: 0 4px 12px rgba(49, 90, 152, 0.15);
+  transform: translateY(-1px);
+}
+
+.form > button:active {
+  transform: translateY(0);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.link p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.link a {
+  color: #315a98;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link a:hover {
+  color: #244779;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 36px 20px;
+    gap: 24px;
+  }
+
+  .welcome {
+    max-width: 560px;
+  }
+
+  .welcome h2 {
+    font-size: 26px;
+  }
+
+  .form {
+    max-width: 440px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContainer {
+    padding: 24px 16px;
     gap: 20px;
+  }
+
+  .welcome {
+    gap: 12px;
+  }
+
+  .welcome h2 {
+    font-size: 23px;
+  }
+
+  .welcome p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .form {
+    padding: 24px 20px;
+    gap: 16px;
+    border-radius: 12px;
+  }
+
+  .form label {
+    font-size: 13px;
+  }
+
+  .form input {
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  .form > button {
+    min-height: 42px;
+  }
+
+  .link p {
+    font-size: 12px;
+  }
 }
 
-.welcome h2{
-    color: #2E5697;
-    font-size: 2rem;
-    font-weight: bold;
-}
+@media (max-width: 360px) {
+  .mainContainer {
+    padding: 20px 12px;
+  }
 
-.welcome p{
-    max-width: 60%;
-    text-align: center;
-}
+  .welcome h2 {
+    font-size: 21px;
+  }
 
-.form{
-    width: 50vw;
-    padding: 1.2rem 2rem;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
-    gap: 10px;
-}
-
-.form input{
-    border: none;
-     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
-}
-
-.form button{
-    width: 100%;
-    max-width: 400px;
-}
-
-.link p{
-    color: #2E5697;
-    font-size: 1rem;
-}
-
-.link a{
-    text-decoration: underline;
+  .form {
+    padding: 20px 16px;
+  }
 }

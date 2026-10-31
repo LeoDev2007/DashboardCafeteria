@@ -1,0 +1,177 @@
+/* Global Modal */
+
+.backdrop {
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.positioner {
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100dvh - 40px);
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.title {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  padding: 0;
+  background-color: transparent;
+  color: #64748b;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: #f1f5f9;
+  color: #315a98;
+}
+
+.body {
+  padding: 24px 28px 28px;
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .positioner {
+    padding: 12px;
+  }
+
+  .content {
+    max-height: calc(100dvh - 24px);
+    border-radius: 12px;
+  }
+
+  .header {
+    padding: 18px 20px 14px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .body {
+    padding: 20px;
+  }
+}
+
+/* Pedidos Detalhes */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 58px;
+  padding: 14px 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.label {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.value {
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.total {
+  color: #315a98;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.observacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 4px 0;
+}
+
+.observacoesTexto {
+  width: 100%;
+  min-height: 72px;
+  padding: 14px 16px;
+  background-color: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .infoRow {
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 52px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .value {
+    font-size: 13px;
+  }
+
+  .total {
+    font-size: 16px;
+  }
+
+  .observacoes {
+    padding-top: 16px;
+  }
+}

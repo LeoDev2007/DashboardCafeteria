@@ -1,5 +1,6 @@
-import {CloseButton, Dialog, Portal } from "@chakra-ui/react";
+import { CloseButton, Dialog, Portal } from "@chakra-ui/react";
 import { useModalStore } from "@/Zustand/useModalStore";
+import styles from "./Modal.module.css";
 
 const GlobalModal = () => {
   const isOpen = useModalStore((state) => state.isOpen);
@@ -8,24 +9,35 @@ const GlobalModal = () => {
   const children = useModalStore((state) => state.children);
 
   return (
-    
-    <Dialog.Root open={isOpen} onOpenChange={(details) => !details.open && onClose()} placement="center" size="lg">
+    <Dialog.Root
+      open={isOpen}
+      onOpenChange={(details) => !details.open && onClose()}
+      placement="center"
+      size="lg"
+      scrollBehavior="inside"
+    >
       <Portal>
-        <Dialog.Backdrop />
-        <Dialog.Positioner>
-          <Dialog.Content padding="2rem">
-            
-            <Dialog.Header>
-              <Dialog.Title>{title || "Aviso"}</Dialog.Title>
+        <Dialog.Backdrop className={styles.backdrop} />
+
+        <Dialog.Positioner className={styles.positioner}>
+          <Dialog.Content className={styles.content}>
+            <Dialog.Header className={styles.header}>
+              <Dialog.Title className={styles.title}>
+                {title || "Aviso"}
+              </Dialog.Title>
+
+              <Dialog.CloseTrigger asChild>
+                <CloseButton
+                  size="sm"
+                  className={styles.closeButton}
+                  aria-label="Fechar modal"
+                />
+              </Dialog.CloseTrigger>
             </Dialog.Header>
-            
-            <Dialog.Body>
+
+            <Dialog.Body className={styles.body}>
               {children}
             </Dialog.Body>
-            <Dialog.CloseTrigger asChild>
-              <CloseButton size="md" onClick={onClose} color="#2E5697" />
-            </Dialog.CloseTrigger>
-            
           </Dialog.Content>
         </Dialog.Positioner>
       </Portal>

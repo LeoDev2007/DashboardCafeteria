@@ -1,36 +1,38 @@
+import styles from "./Modal.module.css";
+
 const PedidoDetalhes = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem" }}>
-          <span style={{ color: "#2E5697" }}>Nome:</span> Joao
-        </h2>
+    <div className={styles.container}>
+      <div className={styles.infoRow}>
+        <span className={styles.label}>Nome</span>
+        <span className={styles.value}>João</span>
       </div>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem" }}>
-          <span style={{ color: "#2E5697" }}>Produto(s):</span> Produto X
-        </h2>
+
+      <div className={styles.infoRow}>
+        <span className={styles.label}>Produto(s)</span>
+        <span className={styles.value}>Produto X</span>
       </div>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem" }}>
-          <span style={{ color: "#2E5697" }}>Total:</span> R$ 14.00
-        </h2>
+
+      <div className={styles.infoRow}>
+        <span className={styles.label}>Total</span>
+        <span className={styles.total}>R$ 14,00</span>
       </div>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem" }}>
-          <span style={{ color: "#2E5697" }}>Quantidade:</span> 10
-        </h2>
+
+      <div className={styles.infoRow}>
+        <span className={styles.label}>Quantidade</span>
+        <span className={styles.value}>10</span>
       </div>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem" }}>
-          <span style={{ color: "#2E5697" }}>Forma de Pagamento:</span> PIX
-        </h2>
+
+      <div className={styles.infoRow}>
+        <span className={styles.label}>Forma de Pagamento</span>
+        <span className={styles.value}>Pix</span>
       </div>
-      <div style={{ borderBottom: "2px solid #000", padding: "0.5rem" }}>
-        <h2 style={{ fontSize: "1rem", color: "#2E5697" }}>Observações:</h2>
-        <p style={{ fontSize: "1rem", fontWeight: "300" }}>
+
+      <div className={styles.observacoes}>
+        <span className={styles.label}>Observações</span>
+        <div className={styles.observacoesTexto}>
           skskskksskskkskskksksks
-        </p>
+        </div>
       </div>
     </div>
   );

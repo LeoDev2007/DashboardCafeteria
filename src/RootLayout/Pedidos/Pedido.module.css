@@ -1,124 +1,273 @@
-.pedidosContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 1.6rem 3rem;
+.pedidosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
 }
 
-.pedidosMiniContainer{
-    display: flex;
-    justify-content: space-between;
+.pedidosContainer *,
+.pedidosContainer *::before,
+.pedidosContainer *::after {
+  box-sizing: border-box;
 }
 
-.pedidosMiniContainer h2{
-    font-size: 2rem;
+.pedidosMiniContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
 }
 
-.pedidosMiniContainer > div{
-    display: flex;
-    gap: 30px;
-    align-items: center;
+.pedidosMiniContainer h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #0f172a;
 }
 
-.pedidosMiniContainer > div > :last-child{
-    width: 200px;
+.pedidosMiniContainer > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.pedidosLista{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    
+.pedidosMiniContainer > div span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
 }
 
-/* Card pedido */
-
-.pedidoCard{
-    display: flex;
-    background-color: #fff;
-    padding: 1rem;
-    align-items: center;
-    border-radius: 10px;
-    gap: 2rem;
-    width: 70%;
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.5);
+.pedidosMiniContainer > div > :last-child {
+  width: 180px;
+  max-width: 100%;
 }
 
-.pedidoCardInfo{
-    display: flex;
-    gap: 3rem;
-    align-items: center;
+.pedidosMiniContainer select {
+  min-height: 40px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.pedidoCardInfo h2{
-    font-size: 2rem;
+.pedidosLista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
 }
 
-.pedidoCardInfo label{
-    color: #2e5697;
+.pedidoCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+  min-height: 120px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.pedidoCardInfo > :last-child{
-    width: 300px;
+.pedidoCard:hover {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
 }
 
-.pedidoCardAcoes{
-    display: flex;
-    gap: 20px;
+.pedidoCardInfo {
+  display: grid;
+  grid-template-columns:
+    minmax(140px, 1.2fr)
+    minmax(120px, 1fr)
+    minmax(140px, 1fr);
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
 }
 
+.pedidoCardInfo > * {
+  min-width: 0;
+}
 
+.pedidoCardInfo h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
 
-.statusPendente, .statusConcluido, .statusCancelado {
-  display: inline-flex; 
-  align-items: center;   
-  justify-content: center; 
-  height: 38px;          
-  padding: 0 12px;       
+.pedidoCardInfo label {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.pedidoCardInfo > :last-child {
+  width: auto;
+  min-width: 0;
+}
+
+.pedidoCardInfo select {
+  width: 100%;
+  max-width: 180px;
+  min-height: 38px;
+  padding: 8px 10px;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.pedidoCardAcoes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.pedidoCardAcoes button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pedidoCardAcoes button:first-child {
+  background-color: #eff6ff;
+  color: #315a98;
+}
+
+.pedidoCardAcoes button:first-child:hover {
+  background-color: #dbeafe;
+}
+
+.pedidoCardAcoes button:last-child {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.pedidoCardAcoes button:last-child:hover {
+  background-color: #fee2e2;
+}
+
+.statusPendente,
+.statusConcluido,
+.statusCancelado {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  min-height: 32px;
+  padding: 6px 12px;
   border-radius: 6px;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-/* Mantenha apenas as cores abaixo delas de forma limpa */
-.statusPendente { color: #d97706; background-color: #fef3c7; }
-.statusConcluido { color: #16a34a; background-color: #dcfce7; }
-.statusCancelado { color: #dc2626; background-color: #fee2e2; }
+.statusPendente {
+  color: #92400e !important;
+  background-color: #fef3c7;
+}
 
-/* Editar pedido */
+.statusConcluido {
+  color: #166534 !important;
+  background-color: #dcfce7;
+}
+
+.statusCancelado {
+  color: #991b1b !important;
+  background-color: #fee2e2;
+}
 
 .formularioContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
   padding: 8px;
+  font-family: "Inter", sans-serif;
 }
 
 .labelTitulo {
-  color: #2E5697;
-  font-weight: bold;
+  color: #315a98;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .produtosLista {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
   margin-top: 8px;
 }
 
 .produtoLinha {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.produtoLinha:last-child {
+  border-bottom: none;
 }
 
 .produtoInfo {
   flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  color: #0f172a;
 }
 
 .produtoPreco {
   margin-left: 8px;
-  color: #718096;
+  color: #64748b;
   font-size: 14px;
 }
 
@@ -129,10 +278,122 @@
 }
 
 .quantidadeNumero {
-  min-width: 20px;
+  min-width: 24px;
   text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
 }
 
 .botaoSalvar {
   margin-top: 16px;
+}
+
+@media (max-width: 1200px) {
+  .pedidosContainer {
+    padding: 28px;
+  }
+
+  .pedidoCardInfo {
+    grid-template-columns:
+      minmax(100px, 1fr)
+      minmax(100px, 1fr)
+      minmax(120px, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pedidosContainer {
+    padding: 24px;
+  }
+
+  .pedidoCard {
+    flex-wrap: wrap;
+  }
+
+  .pedidoCardInfo {
+    flex-basis: 100%;
+  }
+
+  .pedidoCardAcoes {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .pedidosContainer {
+    padding: 20px 16px 32px;
+    gap: 20px;
+  }
+
+  .pedidosMiniContainer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pedidosMiniContainer h2 {
+    font-size: 24px;
+  }
+
+  .pedidosMiniContainer > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pedidosMiniContainer > div > :last-child {
+    width: 180px;
+  }
+
+  .pedidoCard {
+    padding: 18px;
+    gap: 20px;
+  }
+
+  .pedidoCardInfo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .pedidoCardInfo > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .pedidoCardInfo h2 {
+    font-size: 15px;
+  }
+
+  .pedidoCardAcoes button {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+  }
+
+  .produtoLinha {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .pedidosContainer {
+    padding: 16px 12px 24px;
+  }
+
+  .pedidoCardInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .pedidoCardInfo > :last-child {
+    grid-column: auto;
+  }
+
+  .pedidosMiniContainer > div {
+    flex-wrap: wrap;
+  }
+
+  .pedidosMiniContainer > div > :last-child {
+    width: 100%;
+  }
 }

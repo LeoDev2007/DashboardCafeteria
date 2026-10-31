@@ -53,8 +53,9 @@ const PedidoCard = ({ nome, total, status }: Props) => {
           <h2>R$ {total.toFixed(2)}</h2>
         </Field.Root>
 
-        <Field.Root>
+        <Field.Root onClick={(e) => e.stopPropagation()}>
           <Field.Label>Status:</Field.Label>
+
           {isEditingStatus ? (
             <SelectComponent
               value={currentStatus}
@@ -66,33 +67,30 @@ const PedidoCard = ({ nome, total, status }: Props) => {
               <option value="Cancelado">Cancelado</option>
             </SelectComponent>
           ) : (
-            <h2
+            <button
+              type="button"
               onClick={() => setIsEditingStatus(true)}
-              style={{
-                cursor: "pointer",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "6px",
-              }}
               className={getStatusClass(currentStatus)}
             >
-              {currentStatus} <span style={{ fontSize: "10px" }}>▼</span>
-            </h2>
+              {currentStatus}
+              <span>▼</span>
+            </button>
           )}
         </Field.Root>
       </div>
-      <div className={styles.pedidoCardAcoes}>
+      <div
+        className={styles.pedidoCardAcoes}
+        onClick={(e) => e.stopPropagation()}
+      >
         <Button
-          colorPalette="black"
+          aria-label="Editar pedido"
           variant="solid"
-          onClick={(e) => {
-            e.stopPropagation();
-            onOpen("Editar Pedido", <EditarPedido />);
-          }}
+          onClick={() => onOpen("Editar Pedido", <EditarPedido />)}
         >
           <GoPencil />
         </Button>
-        <Button colorPalette="red" variant="solid">
+
+        <Button aria-label="Excluir pedido" variant="solid" colorPalette="red">
           <CiTrash />
         </Button>
       </div>

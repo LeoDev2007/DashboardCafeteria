@@ -7,50 +7,34 @@ const ProdutoEdit = () => {
     <div className={styles.formularioContainer}>
       <Field.Root>
         <Field.Label className={styles.labelTitulo}>Nome:</Field.Label>
-        <Input paddingLeft="0.5rem" placeholder="Nome do produto..." defaultValue="Pão Francês Quinhentos" />
+        <Input
+          paddingLeft="0.5rem"
+          placeholder="Nome do produto..."
+          defaultValue="Pão Francês Quinhentos"
+        />
       </Field.Root>
 
-      <div className={styles.linhaDupla}>
-        <Field.Root style={{ flex: 1 }}>
-          <Field.Label className={styles.labelTitulo}>Preço</Field.Label>
-          <Input paddingLeft="0.5rem" placeholder="R$ 0,00" width="100px" defaultValue="0.80" />
-        </Field.Root>
-
-        <Field.Root>
-          <Field.Label className={styles.labelTitulo}>Quantidade</Field.Label>
-          <div className={styles.incrementadorContainer}>
-            <Button
-              variant="surface"
-              bg="#2E5697"
-              color="#fff"
-              _hover={{ bg: "#1F3D6B" }}
-              size="xs"
-              maxW="xs"
-            >
-              -
-            </Button>
-            <span className={styles.quantidadeNumero}>150</span>
-            <Button
-              variant="surface"
-              bg="#2E5697"
-              color="#fff"
-              _hover={{ bg: "#1F3D6B" }}
-              size="xs"
-              maxW="xs"
-            >
-              +
-            </Button>
-          </div>
-        </Field.Root>
-      </div>
+      <Field.Root>
+        <Field.Label className={styles.labelTitulo}>Preço</Field.Label>
+        <Input
+          paddingLeft="0.5rem"
+          placeholder="R$ 0,00"
+          defaultValue="0.80"
+        />
+      </Field.Root>
 
       <Field.Root>
         <Field.Label className={styles.labelTitulo}>Descrição:</Field.Label>
-        <Input paddingLeft="0.5rem" placeholder="Descrição do produto..." defaultValue="Pão francês tradicional de 50g" />
+        <Input
+          paddingLeft="0.5rem"
+          placeholder="Descrição do produto..."
+          defaultValue="Pão francês tradicional de 50g"
+        />
       </Field.Root>
 
       <Field.Root>
         <Field.Label className={styles.labelTitulo}>Ingredientes</Field.Label>
+
         <div className={styles.linhaIngrediente}>
           <div style={{ flex: 1 }}>
             <SelectComponent defaultValue="1">
@@ -60,6 +44,7 @@ const ProdutoEdit = () => {
               <option value="3">Fermento</option>
             </SelectComponent>
           </div>
+
           <Input
             paddingLeft="0.5rem"
             placeholder="Qtd"
@@ -67,6 +52,7 @@ const ProdutoEdit = () => {
             defaultValue="50"
           />
         </div>
+
         <Button
           bg="#2E5697"
           color="white"

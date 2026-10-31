@@ -27,7 +27,7 @@ const FormGoal = () => {
     resolver: zodResolver(goalSchema),
   });
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onSubmit = (/*data: CreateGoalData*/) => {
     try {
@@ -54,10 +54,14 @@ const FormGoal = () => {
       <form className={styles.FormGoal_Form} onSubmit={handleSubmit(onSubmit)}>
         <Field.Root invalid={!!errors.goal}>
           <Field.Label>Meta de Negócio:</Field.Label>
-          <InputGroup
-            startElement={<span style={{ marginLeft: "1rem" }}>R$</span>}
-          >
-            <Input padding="1rem" placeholder="0.00" type="number" {...register("goal")} />
+          <InputGroup startElement={<span style={{marginLeft: "0.5rem"}}>R$</span>}>
+            <Input
+              paddingLeft="3.5rem"
+              paddingRight="1rem"
+              placeholder="0,00"
+              type="number"
+              {...register("goal")}
+            />
           </InputGroup>
           <Field.ErrorText>{errors.goal?.message}</Field.ErrorText>
         </Field.Root>

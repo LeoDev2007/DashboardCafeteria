@@ -19,23 +19,43 @@ type Props = {
 
 const IngredienteItem = ({ ingrediente }: Props) => {
   const onOpen = useModalStore((state) => state.onOpen);
+
   return (
-    <div className={styles.produtoItem}>
+    <div className={styles.ingredienteItem}>
       <h3>{ingrediente.nome}</h3>
 
-      <p>Estoque: {ingrediente.quantidade}</p>
-      <p>Unidade: {ingrediente.unidade}</p>
-      <p>Stauts: {ingrediente.status}</p>
+      <div className={styles.estoqueQuantidade}>
+        <span>Estoque:</span>
 
-      <div className={styles.produtoAcoes}>
+        <div className={styles.incrementadorContainer}>
+          <Button size="xs">-</Button>
+
+          <span className={styles.quantidadeNumero}>
+            {ingrediente.quantidade}
+          </span>
+
+          <Button size="xs">+</Button>
+        </div>
+      </div>
+
+      <p>Unidade: {ingrediente.unidade}</p>
+      <p>Status: {ingrediente.status}</p>
+
+      <div className={styles.ingredienteAcoes}>
         <Button
           onClick={() => onOpen("Editar Ingrediente", <IngredienteEdit />)}
           colorPalette="black"
           variant="solid"
+          aria-label="Editar ingrediente"
         >
           <GoPencil />
         </Button>
-        <Button colorPalette="red" variant="solid">
+
+        <Button
+          colorPalette="red"
+          variant="solid"
+          aria-label="Excluir ingrediente"
+        >
           <CiTrash />
         </Button>
       </div>
