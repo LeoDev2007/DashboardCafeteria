@@ -33,7 +33,7 @@ const registerSchema = z
     confirmpassword: z
       .string()
       .min(7, { message: "A senha deve ter no mínimo 7 caracteres" })
-      .regex(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{7,}$/, {
+      .regex(/^(?=.*[A-Za-z])(?=.*\d).{7,}$/, {
         message: "A senha deve conter pelo menos uma letra e um número",
       }),
   })
